@@ -19,7 +19,7 @@ jobs:
           command: php -v
       - run:
           name: Apache status
-          command: service apache2 status
+          command: true || service apache2 status
       - run:
           name: Start Apache
           command: service apache2 start
