@@ -19,7 +19,7 @@ jobs:
           command: php -v
       - run:
           name: Test 1
-          command: curl -i localhost
+          command: curl -i 127.0.0.1
       - run:
           name: Test 2
           command: curl -i localhost/rest/
