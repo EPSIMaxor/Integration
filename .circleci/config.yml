@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: /var/www/html
+    working_directory: ~/rest/
     docker:
       - image: php:7.1-apache
         environment:
@@ -17,3 +17,12 @@ jobs:
       - run:
           name: Display PHP information
           command: php -v
+      - run:
+          name: Test 1
+          command: curl -i localhost
+      - run:
+          name: Test 2
+          command: curl -i localhost/rest/
+      - run:
+          name: Test 3
+          command: curl -i localhost/rest/users/
