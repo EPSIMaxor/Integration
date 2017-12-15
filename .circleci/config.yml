@@ -19,10 +19,10 @@ jobs:
           command: php -v
       - run:
           name: Apache status
-          command: service apache status
+          command: service apache2 status
       - run:
           name: Start Apache
-          command: service apache start
+          command: service apache2 start
       - run:
           name: Test 1
           command: curl -i 127.0.0.1
