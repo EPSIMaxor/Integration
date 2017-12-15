@@ -21,5 +21,5 @@ jobs:
           name: Starting Apache
           command: service apache2 status || service apache2 start
       - run:
-          name: Test API Homepage
-          command: curl -i localhost
+          name: Test API Homepage status code
+          command: curl -f -i localhost
