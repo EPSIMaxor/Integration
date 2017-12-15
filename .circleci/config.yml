@@ -18,17 +18,8 @@ jobs:
           name: Display PHP information
           command: php -v
       - run:
-          name: Apache status
-          command: true || service apache2 status
+          name: Starting Apache
+          command: service apache2 status || service apache2 start
       - run:
-          name: Start Apache
-          command: service apache2 start
-      - run:
-          name: Test 1
-          command: curl -i 127.0.0.1
-      - run:
-          name: Test 2
-          command: curl -i localhost/rest/
-      - run:
-          name: Test 3
-          command: curl -i localhost/rest/users/
+          name: Test API Homepage
+          command: curl -i localhost
