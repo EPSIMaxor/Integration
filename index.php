@@ -1,7 +1,7 @@
 <?php
 
 	try {
-		$bdd = new PDO('mysql:host=localhost;dbname=inte', 'dev', 'password');
+		$bdd = new PDO('mysql:host=localhost;dbname=inte', $_SEREVR['bdd_username'], $_SERVER['bdd_password']);
 	}
 	catch( PDOException $Exception ) {
 		header('HTTP/1.1 500 Internal Server Error');
