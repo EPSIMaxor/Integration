@@ -4,7 +4,9 @@
 		$bdd = new PDO('mysql:host=localhost;dbname=inte', 'dev', 'password');
 	}
 	catch( PDOException $Exception ) {
+		header('HTTP/1.1 500 Internal Server Error');
 	    	echo 'Erreur de connexion : ' . $Exception->getMessage() . ' ; code : ' . $Exception->getCode();
+		exit();
 	}
 
 	$method = $_SERVER['REQUEST_METHOD'];
